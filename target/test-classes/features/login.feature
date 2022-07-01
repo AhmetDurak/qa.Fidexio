@@ -1,3 +1,4 @@
+
 Feature: As a user, I should be able to log in so that I can land on homepage.
 
   Background:
@@ -22,21 +23,13 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
 
   @Fidex-345
   Scenario Outline:As a User, I should NOT be log in with invalid credentials
-    Given As a user, I try to log in with empty credentials in '<username>' and '<password>' fields, then I get "Please fill out this field" message in '<message field>'
-    Examples:
-      | username   | password | message field |
-      |            |          | email         |
-      | posmanager |          | password      |
-      |            | password | email         |
-
-
-  Scenario Outline:As a User, I should NOT be log in with invalid credentials
     Given As a '<user>', I try to log in with '<invalid credentials>' like '<username>' and '<password>'
     And User click log in button
     Then User get a "<message>"
 
     Examples:
       | user         | invalid credentials          | username                | password          | message                    |
+      | PosManager   | no username no password      |                         |                   | Please fill out this field |
       | PosManager   | wrong username true password | posmanager10info.com    | posmanager        | Wrong login/password       |
       | PosManager   | true username wrong password | posmanager10@info.com   | posmanagerFalse   | Wrong login/password       |
       | SalesManager | no username no password      |                         |                   | Please fill out this field |

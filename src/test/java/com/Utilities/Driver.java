@@ -26,7 +26,9 @@ public class Driver {
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--lang=en");
+                    driver = new ChromeDriver(options);
                     //driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
