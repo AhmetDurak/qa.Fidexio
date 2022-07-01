@@ -26,7 +26,7 @@ public abstract class BasePage {
     @FindBy(css = "a.btn.btn-link")
     public WebElement resetPassword;
 
-    @FindBy(css = ".oe_topbar_name")
+    @FindBy(css = "span.oe_topbar_name")
     public WebElement user_id;
 
     @FindBy (css = "p.alert")

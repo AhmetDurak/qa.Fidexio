@@ -35,7 +35,7 @@ public class LoginStepDefs {
 
     @Given("User sees password in the textbox in bullet signs by default")
     public void user_sees_password_in_the_textbox_in_bullet_signs_by_default() {
-        //Assert.assertEquals("hidden",loginTest.password.getAttribute("type"));
+        Assert.assertEquals("password",loginTest.password.getAttribute("type"));
     }
 
     @Then("User click log in button")
@@ -45,6 +45,7 @@ public class LoginStepDefs {
 
     @Then("User should be able to see {string} on right side of  top bar")
     public void user_should_be_able_to_see_on_right_side_of_top_bar(String user_id) {
+        System.out.println(loginTest.user_id.getText().toLowerCase());
         Assert.assertTrue(loginTest.user_id.getText().toLowerCase().contains(user_id));
     }
 
