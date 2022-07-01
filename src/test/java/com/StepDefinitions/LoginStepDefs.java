@@ -67,29 +67,29 @@ public class LoginStepDefs {
                 Assert.assertEquals(message, loginTest.password.getAttribute("validationMessage"));
                 break;
         }
-
-
     }
 
     @Given("As a {string}, I try to log in with {string} like {string} and {string}")
     public void asAUserITryToLogInWithInvalidCredentialsLikeUsernameAndPassword(String user, String invalidCredentials, String username, String password) {
         loginTest = new LoginPage();
-        System.out.println("Trying to log in as a " + user);
-        System.out.println(invalidCredentials);
+        System.out.print("Trying to log in as a " + user + " with " + invalidCredentials + " like username: " + username + " and password: " + password);
         loginTest.email.sendKeys(username);
         loginTest.password.sendKeys(password);
         loginTest.login.click();
-        System.out.println(loginTest.password.getAttribute("validationMessage"));
-
     }
 
     @Then("User get a {string}")
     public void userGetA(String message) {
-
+        Assert.assertEquals(message, loginTest.wrongLoginPassword.getText());
+        System.out.println(" --> " + loginTest.wrongLoginPassword.getText());
     }
 
     @When("After User click on Reset password button, user should be landing on Reset password page")
     public void afterUserClickOnResetPasswordButtonUserShouldBeLandingOnResetPasswordPage() {
+        loginTest = new LoginPage();
+        loginTest.resetPassword.click();
+
+        Assert.assertTrue(Driver.get().getTitle().contains("Reset password"));
     }
 
 

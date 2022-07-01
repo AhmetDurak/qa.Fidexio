@@ -20,9 +20,9 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
     Then User press Enter on keyboard
     And User should be able to see "salesmanager" on right side of  top bar
 
-  @Fidex-345
+
   Scenario Outline:As a User, I should NOT be log in with invalid credentials
-    Given As a user, I try to log in with empty credentials in '<username>' and '<password>' fields, then I get "Please fill out this field" message in '<message field>'
+    Given As a user, I try to log in with empty credentials in '<username>' and '<password>' fields, then I get "Please fill out this field." message in '<message field>'
     Examples:
       | username   | password | message field |
       |            |          | email         |
@@ -36,14 +36,13 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
     Then User get a "<message>"
 
     Examples:
-      | user         | invalid credentials          | username                | password          | message                    |
-      | PosManager   | wrong username true password | posmanager10info.com    | posmanager        | Wrong login/password       |
-      | PosManager   | true username wrong password | posmanager10@info.com   | posmanagerFalse   | Wrong login/password       |
-      | SalesManager | no username no password      |                         |                   | Please fill out this field |
-      | SalesManager | wrong username true password | salesmanager10info.com  | salesmanager      | Wrong login/password       |
-      | SalesManager | true username wrong password | salesmanager10@info.com | salesmanagerFalse | Wrong login/password       |
+      | user         | invalid credentials          | username                | password          | message              |
+      | PosManager   | wrong username true password | posmanager10info.com    | posmanager        | Wrong login/password |
+      | PosManager   | true username wrong password | posmanager10@info.com   | posmanagerFalse   | Wrong login/password |
+      | SalesManager | wrong username true password | salesmanager10info.com  | salesmanager      | Wrong login/password |
+      | SalesManager | true username wrong password | salesmanager10@info.com | salesmanagerFalse | Wrong login/password |
 
-
+  @Fidex-345
   Scenario: As a user, I should be landing on the ‘reset password’ page
   after clicking on the "Reset password" link
     When After User click on Reset password button, user should be landing on Reset password page
