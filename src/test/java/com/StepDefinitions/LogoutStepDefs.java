@@ -35,4 +35,9 @@ public class LogoutStepDefs {
         Assert.assertTrue(logoutPage.getAlert.getText().toLowerCase().contains("session expired"));
     }
 
+    @Then("User should be landing on Log in page")
+    public void userShouldBeLandingOnLogInPage() {
+        BrowserUtilities.waitFor(1);
+        Assert.assertTrue(Driver.get().getTitle().contains("Login"));
+    }
 }

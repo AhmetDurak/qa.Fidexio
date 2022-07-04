@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: Log out Functionality [AutomationS3-AD] #2
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 25.175 s <<< FAILURE! - in Log out Functionality [AutomationS3-AD] #2
+Log out Functionality [AutomationS3-AD] #2.User can log out and ends up in login page #2  Time elapsed: 10.029 s  <<< FAILURE!
+java.lang.AssertionError
+

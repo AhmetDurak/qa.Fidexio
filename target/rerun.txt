@@ -1,1 +1,2 @@
-file:src/test/resources/features/logOut.feature:16:17
+file:src/test/resources/features/logOut_TC002.feature:15
+file:src/test/resources/features/logOut_TC001.feature:15
