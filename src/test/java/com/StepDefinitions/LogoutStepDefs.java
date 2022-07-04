@@ -31,6 +31,7 @@ public class LogoutStepDefs {
     @Then("User should NOT go to the home page again by clicking go back button")
     public void user_should_not_go_to_the_home_page_again_by_clicking_go_back_button() {
         Driver.get().navigate().back();
+        BrowserUtilities.waitFor(2);
         logoutPage = new LogoutPage();
         Assert.assertTrue(logoutPage.getAlert.getText().toLowerCase().contains("session expired"));
     }
