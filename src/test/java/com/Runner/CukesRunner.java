@@ -6,11 +6,16 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = "html:target/cucumber-report.html",
+        plugin = {
+                "html:target/cucumber-report.html",
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
+                "rerun:target/rerun.txt",
+                "json:target/jira-report.json"
+        },
         features = "src/test/resources/features",
         glue = "com/StepDefinitions",
         dryRun = false,
-        tags = "@Fidex-345"
+        tags = ""
 )
 
 public class CukesRunner {
