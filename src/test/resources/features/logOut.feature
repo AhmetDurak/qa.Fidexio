@@ -1,7 +1,7 @@
 @wip
 Feature: Log out Functionality [AutomationS3-AD]
 
-  Background: User should be logged in before performing log out.
+  Background: Log in Page
     Given User should be on log in page
 
 
