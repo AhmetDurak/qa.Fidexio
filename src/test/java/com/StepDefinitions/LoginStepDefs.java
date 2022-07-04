@@ -40,6 +40,7 @@ public class LoginStepDefs {
 
     @Then("User click log in button")
     public void user_click_log_in_button() {
+        loginTest = new LoginPage();
         loginTest.login.click();
     }
 
@@ -51,6 +52,7 @@ public class LoginStepDefs {
 
     @Then("User press Enter on keyboard")
     public void userPressEnterOnKeyboard() {
+        loginTest = new LoginPage();
         loginTest.login.sendKeys(Keys.ENTER);
     }
 

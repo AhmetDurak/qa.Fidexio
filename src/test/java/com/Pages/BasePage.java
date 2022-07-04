@@ -32,6 +32,8 @@ public abstract class BasePage {
     @FindBy (css = "p.alert")
     public WebElement wrongLoginPassword;
 
+    @FindBy(linkText = "Log out")
+    public WebElement logoutBtn;
 
 
 
