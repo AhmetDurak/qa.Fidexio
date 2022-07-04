@@ -16,7 +16,7 @@ public class LogoutStepDefs {
         logoutPage.email.sendKeys(username);
         logoutPage.password.sendKeys(password);
         logoutPage.login.click();
-        BrowserUtilities.waitFor(6);
+        BrowserUtilities.waitFor(7);
         Assert.assertTrue(Driver.get().getTitle().contains("#Inbox - Odoo"));
     }
 
