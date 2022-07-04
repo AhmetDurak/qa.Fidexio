@@ -1,10 +1,10 @@
-@wip
 Feature: Log out Functionality [AutomationS3-AD]
-
+#@FIDEX-419
   Background: Log in Page
     Given User should be on log in page
 
-  Scenario Outline: User can log out and ends up in login page
+  @FIDEX-417 @LogoutAutomated
+  Scenario Outline: User should NOT go to the home page again
     Given '<User>' log in with valid credentials as '<username>' and '<password>'
     And User click '<user menu>' on right side of  top bar
     Then User should NOT go to the home page again by clicking go back button

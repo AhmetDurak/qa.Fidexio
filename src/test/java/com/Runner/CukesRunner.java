@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/StepDefinitions",
         dryRun = false,
-        tags = "@wip"
+        tags = "@LogoutAutomated"
 )
 
 public class CukesRunner {
