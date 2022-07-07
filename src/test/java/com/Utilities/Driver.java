@@ -9,8 +9,11 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 
@@ -33,6 +36,18 @@ public class Driver {
                     driverPool.set(new ChromeDriver(options));
                     //driver.manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+                case "remote-chrome":
+                    try {
+                        // assign your grid server address
+                        String gridAddress = "23.22.37.164";
+                        URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
+                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName("chrome");
+                        driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                        driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    } catch (Exception ignored) {
+                    }
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
